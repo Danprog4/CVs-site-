@@ -23,6 +23,7 @@ const FavoriteList: React.FC = () => {
     const [animationParent] = useAutoAnimate()
     const showFavorite = (arr: Person[], favArr: number[]) => {
         const newArr = arr.filter((elem) => favArr.includes(elem.id));
+        // localStorage.setItem('favoriteArr', JSON.stringify(newArr));      
         setFavoriteList(newArr);
     }
 
@@ -44,6 +45,7 @@ const FavoriteList: React.FC = () => {
                         </li>
                     ))}
                 </ul>
+                
             ) : (
                 <div className="flex flex-col gap-3">
                     <span className="font-semibold text-xl">You didn’t add favorite CVs yet</span>
